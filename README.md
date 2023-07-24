@@ -1,13 +1,10 @@
 # Hugging Face AWS Inferentia2 samples
 
-This repository contains sample notebooks and scripts to demonstrate how to deploy Hugging Face models, like BERT, GPT-2 Stable-Diffusion, T5 with Amazon SageMaker, and AWS Inferentia.2
-You will learn how to: 
+This repository contains sample notebooks and scripts to demonstrate how to deploy Hugging Face models, like BERT, GPT-2 Stable-Diffusion, T5 with Amazon SageMaker, and AWS Inferentia2
 
-1. Convert your models to AWS Neuron (Inferentia")
-2. Create a custom `inference.py` scripts
-3. Create and upload the neuron model and inference script to Amazon S3
-4. Deploy a Real-time Inference Endpoint on Amazon SageMaker
-5. Run and evaluate Inference performance on Inferentia2
+- [optimize and deploy BERT](./bert-transformers/sagemaker-notebook.ipynb)
+- [optimize and deploy Stable Diffusion](./stable-diffusion/sagemaker-notebook.ipynb)
+
 
 ## 📕 Background
 
@@ -30,3 +27,6 @@ The quickest setup to run example notebooks includes:
 ---
 
 *If you are going to use Sagemaker in a local environment (not SageMaker Studio or Notebook Instances). You need access to an IAM Role with the required permissions for Sagemaker. You can find [here](https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html) more about it.*
+
+
+optimum-cli export neuron --model runwayml/stable-diffusion-v1-5 --task stable-diffusion --batch_size 1 --height 512 --width 512 sd_neuron/
