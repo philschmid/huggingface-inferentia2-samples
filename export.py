@@ -1,5 +1,7 @@
-from optimum.neuron import NeuronStableDiffusionPipeline
+from optimum.neuron.version import __version__
 
+print(f"Running on {__version__}")
+from optimum.neuron import NeuronStableDiffusionPipeline
 
 model_id = "runwayml/stable-diffusion-v1-5"
 input_shapes = {"batch_size": 1, "sequence_length": 64, "height": 512, "width": 512}
