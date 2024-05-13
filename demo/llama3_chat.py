@@ -87,7 +87,6 @@ def create_gradio_app(
             c = c.decode("utf-8")
             if c.startswith("data:"):
                 chunk = json.loads(c.lstrip("data:").rstrip("/n"))["choices"][0]
-                print(chunk)
                 if chunk["finish_reason"]:
                     break
                 output += chunk["delta"]["content"]
